@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Ciberseguridad y Design Thinking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --background-light: #ffffff;
+            --background-dark: #1f2937;
+            --text-light: #1f2937;
+            --text-dark: #f9fafb;
+        }
+
+
+        html[data-theme="light"] {
+            background-color: var(--background-light);
+            color: var(--text-light);
+        }
+
+        html[data-theme="dark"] {
+            background-color: var(--background-dark);
+            color: var(--text-dark);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid #ccc;
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: inherit;
+            color: inherit;
+            line-height: 1.6;
+        }
+
+        header {
+            background: inherit;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: inherit;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .mockup,
+        .prototipo {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .mockup img,
+        .prototipo img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .brainstorming-list li {
+            margin-bottom: .5rem;
+        }
+
+        #subtitle {
+            padding: 10px 0 10px 0;
+        }
+
+        img {
+            width: 600px;
+        }
+
+        .img-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            padding: 40px 0 40px 0;
+        }
+
+        section {
+            padding: 10px 0 10px 0;
+        }
+
+        a {
+            color: var(--primary-color);
+        }
+
+        span {
+            font-size: .9rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <header>
+        <h1>Inseguridad y falta de conocimiento sobre seguridad en internet: Ideación y prototipado</h1>
+        <span>Tomas Estrada Martinez - Taller de Estrategias de Pensamiento</span>
+    </header>
+
+    <div class="container">
+        <h2>Introducción</h2>
+        <p>
+            Este blog hace parte de un proyecto que parte del ideal de mejorar los conocimientos sobre ciberseguridad a
+            usuarios de internet del día a día.
+            Usamos una herramienta para abordar la problematica llamada Design Thinking, la cual nos ayuda a ver los
+            problemas visibles y tangibles, y dar soluciones útiles.
+            Aquí vemos las piezas clave retoralimentadas en las dos fases anteriores: empatizar y definir.
+        </p>
+        <p>
+            En la fase de empatizar se realizaron entrevistas y encuestas que evidenciaron el desconocimiento general
+            sobre temas básicos de seguridad en línea como contraseñas seguras, phishing y el uso de redes públicas. En
+            la fase de definir se determinó como principal necesidad: educar a los usuarios con contenido accesible,
+            visual e interactivo.
+        </p>
+        <p>
+        <div id="subtitle">
+            <strong>Nuestra conclusión de la problematica y nuestro usuario final</strong>
+        </div>
+        Utiliza internet diariamente para trabajar, entretenerse y conectarse a través de redes sociales, pero
+        no tiene hábitos seguros como el uso de contraseñas fuertes o autenticación en dos pasos. Sus principales
+        objetivos giran en torno a mejorar su seguridad digital de manera práctica y sencilla, con un fuerte interés
+        en herramientas accesibles y fáciles de aplicar. Se frustra fácilmente cuando la información es demasiado
+        técnica o cuando no encuentra guías claras para proteger su privacidad, lo que evidencia la necesidad de
+        soluciones accesibles, educativas y visualmente amigables para este tipo de usuario.
+        </p>
+
+        <h3>
+            Entonces... ¿Cómo abordamos nuestra problematica y cual puede ser una solución viable?
+        </h3>
+
+        <section>
+
+            <h2>Fase Idear</h2>
+
+            <p>
+                Para esta fase utilizamos la técnica de <strong>brainstorming</strong> con el fin de generar ideas
+                creativas
+                que dieran solución a las necesidades distinguidas. Para esto nos enfocamos en cuatro pilares
+                principales
+                que
+                giran entorno a nuestra solución principal: Una <strong>aplicación web diseñada para capacitaciones y
+                    aprendizaje
+                    sobre ciberseguridad en linea</strong>:
+            </p>
+            <ul class="brainstorming-list">
+                <li><strong>Educación y concienciación digital:</strong> Exponer situaciones de riesgo en internet como
+                    ataques de phishing o malware, y brindar herramientas practicas
+                    de forma didactica para comprender y ejecutar correctamente su uso.</li>
+                <li><strong>Recursos confiables y referencias: </strong> Se presentan y disponen de fuentes de
+                    información
+                    oficiales y seguros sobre ciberseguridad para generar confianza
+                    y fiabilidad por parte de nuestros usuarios.
+                </li>
+                <li><strong>Soporte para usuarios:</strong> Canales de ayuda activos y confiables, donde personas
+                    expertas y
+                    estudiantes, compartirán su información y experiencias
+                    para retroalimentar el proceso de forma conjunta.</li>
+                <li><strong>Materialzación de ideas y prototipos: </strong> Se plantean posibles features para nuestra
+                    aplicación web de ciberseguridad para dar un diseño amigable, facil de usar,
+                    con un buen flujo y experiencia de usuario.</li>
+            </ul>
+
+            <div class="img-container">
+                <img src="./Brainstorming  Esquema Doodle Multicolor.png" alt="">
+            </div>
+            <p>
+                En el siguiente link puedes ver el esquema visual de nuestro brainstorming mas a detalle:
+                <a href="https://www.canva.com/design/DAGnwarGKHg/rsw0bXrhylip3CDJ5npj7g/view?utm_content=DAGnwarGKHg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he889418f52"
+                    target="_blank">Esquema en Canva</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>Fase Prototipar</h2>
+            <p>
+                A partir del brainstorming, se elaboró un prototipo de baja-media fidelidad (mockup) en Figma. Este
+                incluye
+                una interfaz
+                sencilla que simula la estructura principal de la pagina y expone nuestras ideas planteadas
+                anteriormente
+                poniendo como prioridad el posible diseño de apartados como: Perfil, progreso, comunidad y recursos.
+            </p>
+            <div class="mockup">
+                <img src="./mockup.png" alt="Mockup en Figma">
+            </div>
+            <p>
+                Puedes ver el prototipo de baja-media fidelidad (mockup) aquí:
+                <a href="https://www.figma.com/design/bBsnhVK4A0eqF3V7cZrYnX/Untitled?node-id=0-1&t=Co1Lv0SLMAE9jq63-1"
+                    target="_blank">Mockup en Figma</a>
+            </p>
+            <p>
+                Este prototipo toma elementos de las simulaciones interactivas, el blog y el diagnóstico de seguridad,
+                permitiendo navegar entre ejemplos y consejos prácticos.
+            </p>
+
+            <h2>Prototipo de Alta Fidelidad</h2>
+            <p>
+                Se desarrolló un prototipo más refinado y funcional para mostrar la experiencia de usuario final.
+            </p>
+            <div class="prototipo">
+                <img src="./muestraPagina.gif" alt="Prototipo de Alta Fidelidad">
+            </div>
+            <p>
+                Accede al prototipo aquí:
+                <a href="https://proyectoestrategiastomas.netlify.app" target="_blank">Prototipo de
+                    Alta Fidelidad</a>
+            </p>
+            <p>
+                Este prototipo representa una versión visual detallada y navegable de la aplicación web de
+                ciberseguridad.
+                Fue diseñado con un enfoque minimalista, moderno y educativo, simulando la experiencia final del
+                usuario.
+            </p>
+            <h4>Objetivo</h4>
+            <ul>
+                <li>
+                    Visualizar la interfaz final y validar la experiencia de usuario.
+                </li>
+                <li>
+                    Mostrar la estructura funcional y el diseño visual de la plataforma.
+                </li>
+            </ul>
+            <h4>
+                Secciones principales
+            </h4>
+            <ul>
+                <li>
+
+                    Inicio: Noticias y posibles temas de interes
+                </li>
+                <li>
+                    Progreso: Avance del usuario, formularios, retos y quizzes.
+                </li>
+                <li>
+                    Recursos: Cursos, enlaces externos y material educativo.
+                </li>
+                <li>
+                    Perfil: Información personal, historial y actualización de la información.
+                </li>
+                <li>
+                    Comunidad: Vista previa estática de chats, canales y espacios de interacción.
+                </li>
+            </ul>
+
+            <p style="color: gray;">
+                * Vale aclarar que ninguno de los apartados vistos en nuestro prototipo de alta fidelidad poseen
+                funcionalidades reales mas que la navegación entre ellas e interacción sobre lógica con formularios y
+                potenciales quizzes y demás actividaes interactivas.
+            </p>
+        </section>
+
+        <article>
+            <h2>Conclusiones de la experiencia</h2>
+            <p>
+                Este proyecto nos permitió entender mejor los problemas que tienen muchas personas con la seguridad en
+                internet, especialmente por la falta de información clara y accesible. Usando el enfoque de Design
+                Thinking, en las fases de empatizar y definir conocimos las verdaderas necesidades de los usuarios y
+                creamos un perfil que nos ayudó a guiarnos en todo el proceso.
+            </p>
+            <p>
+                Luego con ayuda de un brainstorming, generamos ideas centradas en educar al usuario de forma práctica y
+                visual. Esto nos llevó a desarrollar un prototipo de alta fidelidad y un mockup funcional de la app
+                SegurApp, con un diseño atractivo, accesible y pensado para enseñar y capacitar a nuestros usuarios
+                sobre ciberseguridad de manera
+                sencilla.
+            </p>
+            <p>
+                Con este proyecto buscamos aportar una solución útil, educativa y fácil de usar frente a una
+                problemática muy actual como lo es la ciberseguridad.
+            </p>
+        </article>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute("data-theme");
+            const newTheme = current === "light" ? "dark" : "light";
+
+            html.setAttribute("data-theme", newTheme);
+
+            const button = document.querySelector(".theme-toggle");
+            button.textContent = newTheme === "light" ? "🌙" : "☀️";
+        }
+    </script>
+</body>
+
+</html>
